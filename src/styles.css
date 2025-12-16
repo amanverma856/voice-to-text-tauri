@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #1e1e1e;
+  color: white;
+}
+
+.container {
+  padding: 20px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 10px;
+}
