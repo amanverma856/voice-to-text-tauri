@@ -6,7 +6,7 @@ let mediaRecorder = null;
 let audioChunks = [];
 let recording = false;
 
-//  PUT YOUR DEEPGRAM API KEY HERE
+
 const DEEPGRAM_API_KEY = "Token daa3d3359d2f266d2f6b3e923e701ff7feab8260";
 
 recordBtn.addEventListener("click", async () => {
