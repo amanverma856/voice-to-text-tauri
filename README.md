@@ -1,169 +1,167 @@
 🎙️ Voice-to-Text Desktop App (Tauri + Deepgram)
 
-A cross-platform Voice-to-Text desktop application built using Tauri and Deepgram Speech-to-Text API.
-This project demonstrates how to capture microphone audio, process it, and convert speech into text in a desktop environment.
+A cross-platform AI-powered desktop application that converts voice input into text using Deepgram Speech-to-Text and Tauri.
+
+This project is built as part of a technical assignment to demonstrate practical skills in desktop app development, audio processing, and AI API integration.
 
  Project Overview:
 
-This application is a functional clone of Wispr Flow (core workflow).
-The focus is on voice recording and accurate speech transcription, not UI design.
+This application allows users to:
 
-Users can:
+Press a button to start recording 
 
-Press a button to start recording
-
-Speak through the microphone
+Speak naturally into the microphone
 
 Stop recording
 
-Instantly see the transcribed text
+Instantly receive transcribed text 
+
+The focus of this project is functionality, clean architecture, and secure API usage, not UI polish.
 
  Tech Stack:
 
-Tauri (v2) – Lightweight cross-platform desktop framework
+Tauri (v2) – Lightweight, secure cross-platform desktop framework
 
-Vanilla JavaScript – Frontend logic
+Vanilla JavaScript – Frontend logic and UI interaction
 
-HTML & CSS – Simple UI
+Rust – Backend logic and secure API handling
 
 Deepgram API – Speech-to-Text transcription
 
-Web Media APIs – Microphone access and audio capture
+Web Audio API / MediaRecorder – Audio capture
 
- Features:
+ Core Features:
 
- Push-to-talk voice recording
+ Push-to-Talk Recording
 
- Microphone permission handling
+ Microphone Permission Handling
 
- AI-powered speech-to-text (Deepgram)
+AI-powered Speech-to-Text (Deepgram)
 
- Displays transcribed text instantly
+Cross-platform Desktop App
 
- Desktop app (Windows / macOS / Linux)
+ Secure API Key Handling (Environment Variables)
 
- Basic error handling
+Clean & Maintainable Code Structure
 
- Project Structure
-voice-to-text-tauri/
-├── src/
-│   ├── index.html
-│   ├── main.js
-│   └── styles.css
-├── src-tauri/
-│   ├── src/main.rs
-│   ├── Cargo.toml
-│   └── .env (ignored)
-├── README.md
-└── package.json
+ Architecture Overview
+Frontend (HTML + JS)
+   |
+   |  Audio Data
+   v
+Tauri Backend (Rust)
+   |
+   |  Secure API Call
+   v
+Deepgram Speech-to-Text API
 
- How It Works
+Why this architecture?
 
-The user clicks Start Recording
+API keys are never exposed in the frontend
 
-The app captures audio using the microphone
+Backend handles all third-party API communication
 
-Audio is processed and converted to a supported format
+Follows real-world production standards
 
-Audio is sent to Deepgram Speech-to-Text API
+ API Key Security
 
-Deepgram returns the transcribed text
+Deepgram API key is stored in:
 
-The text is displayed in the app
+src-tauri/.env
 
- API Key Setup (Important)
 
-This project uses the Deepgram API.
+The .env file is ignored via .gitignore
 
-Create API Key
+API key is accessed only in Rust backend
 
-Go to https://console.deepgram.com/
+Frontend never contains secrets
 
-Create a new API key
+Example .env file:
 
-For Local Testing
+DEEPGRAM_API_KEY=your_api_key_here
 
-The API key is used during development.
-Do not commit your API key to GitHub.
+ How to Run the Project Locally
+1️ Prerequisites
 
-Example:
+Node.js (v18+ recommended)
 
-Authorization: "Token YOUR_DEEPGRAM_API_KEY"
+Rust & Cargo
 
-▶ Run the Project Locally
-Prerequisites
+Tauri prerequisites installed
 
-Node.js
-
-Rust
-
-Tauri CLI
-
-Windows/macOS/Linux system
-
-Steps
+2️ Install dependencies
 npm install
+
+3️ Run the desktop app
 npm run tauri dev
 
-Demo Video
+ How to Use the App:
 
-A short demo video is provided showing:
+Click Start Recording
 
-App startup
+Speak clearly into the microphone
 
-Recording voice
+Click Stop Recording
 
-Transcription output
+View the transcribed text in the text area
 
-(Hosted on Google Drive / YouTube)
+ Demo Video
 
-Known Limitations
+A short demo video is included showing:
 
-UI is minimal (focus on functionality)
+App launch
 
-No background noise filtering
+Voice recording
 
-Single-language transcription (English)
+Real-time transcription
 
-API key handling can be further secured in backend
+(Link provided in submission)
 
- Design Decisions:
+ Key Learnings & Challenges:
 
-Chose Tauri for lightweight desktop performance
+Handling microphone access across platforms
 
-Used Vanilla JS for simplicity
+Debugging audio encoding issues on Windows
 
-Focused on core voice-to-text workflow
+Securely managing API keys in desktop apps
 
-Prioritized functionality over UI polish
+Integrating real-time AI services into a native app
 
- Future Improvements:
+ Known Limitations
 
-Move API key fully to backend
+UI is minimal (focus was functionality)
 
-Add push-to-talk keyboard shortcut
+No live streaming transcription (record-then-transcribe)
 
-Add language selection
+English language only (can be extended easily)
+
+ Possible Enhancements
+
+Push-to-talk keyboard shortcut
+
+Multi-language support
 
 Save transcription to file
 
-Improve UI/UX
+Real-time streaming transcription
 
-👤 Author
+Improved UI/UX
+
+ Author
 
 Aman kr Verma
-B.Tech Graduate | Aspiring Software / AI Engineer
+B.Tech Graduate | Aspiring Software & AI Engineer
 
-Assignment Checklist
+✅ Final Notes
 
- Desktop app using Tauri
+This project demonstrates:
 
- Microphone access
+Practical problem-solving
 
- Speech-to-text integration
+Clean separation of concerns
 
- Working prototype
- 
- Clean and readable code
+Secure API usage
 
- Documentation
+Real-world desktop application development
+
+Thank you!
